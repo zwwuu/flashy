@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flashy/features/deck/views/widgets/deck_create_dialog.dart';
 import 'package:flashy/features/deck/views/widgets/deck_list.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +16,10 @@ class DeckListPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showDialog<String>(
+          showModal(
             context: context,
-            builder: (BuildContext context) => const DeckCreateDialog(),
+            configuration: const FadeScaleTransitionConfiguration(),
+            builder: (context) => const DeckCreateDialog(),
           );
         },
         tooltip: 'Create deck',
